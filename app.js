@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 
 const app = express()
 
@@ -12,7 +13,7 @@ app.use(express.json())
 
 // my libs
 const conectDb = require('./db/conectdb')
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3000
 conectDb(() => app.listen(PORT, console.log(`server is running on port ${PORT} ...`)))
 
 // test
