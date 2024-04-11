@@ -1,3 +1,3 @@
-const {generateDummyParagraph} = require('../dummy/dummy')
+const Dummy = require('../dummy/dummy')
 
-console.log(generateDummyParagraph(15))
+console.log(Dummy.paragraph(2))

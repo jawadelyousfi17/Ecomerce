@@ -190,7 +190,7 @@ const commonAdjectives = [
     "indifferent", "reliable", "unreliable", "sociable", "unsociable", "sincere", "insincere", "sober", "excitable", "thorough",
     "superficial", "tactful", "blunt", "gracious", "rude"]
 const commonPunctuation = [
-    ".", ",", "?", "!", ".", ".", ",", ",", ",", ":", ";", "'", "!"]
+    ",", " ?", "!", ",", ",", ",", " ;", , '', '', '', '']
 const names = [
     "Liam", "Olivia", "Noah", "Emma", "Oliver", "Ava", "William", "Sophia", "Elijah", "Isabella",
     "James", "Mia", "Benjamin", "Charlotte", "Lucas", "Amelia", "Henry", "Harper", "Alexander", "Evelyn",
@@ -440,36 +440,7 @@ function getRandomNumber(min, max) {
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
-function generateDummyString(stringLength) {
-    let dummyString = ''
-    for (let index = 0; index < stringLength; index++) {
-        dummyString += getRandomNumber(0, 10) > 2 ? getRandomItemFromArray(commonSubjects).toLowerCase() + ' ' : getRandomItemFromArray(names) + ' '
-        dummyString += getRandomNumber(0, 10) > 4 ? getRandomItemFromArray(commonEnglishVerbs) + ' ' : getRandomItemFromArray(commonEnglishWords) + ' '
-        dummyString += getRandomItemFromArray(commonEnglishObjects) + ' '
-        dummyString += getRandomItemFromArray(commonEnglishWords) + ' '
-        dummyString += getRandomNumber(0, 10) > 8 ? getRandomItemFromArray(commonEnglishWords) : getRandomItemFromArray(commonEnglishObjects)
-        dummyString += ' '
-    }
-    return dummyString
-}
 
-/// generate a random paragraph that contain paragraph length sentences
-/// @paragraphlength
-function generateDummyParagraph(paragraphLength) {
-    let dummyParagraph = ''
-    let wrapLine = true
-    for (let index = 0; index < paragraphLength; index++) {
-        dummyParagraph += wrapLine ? capitalizeFirstLetter(generateDummyString(getRandomNumber(1, 3))) : generateDummyString(getRandomNumber(1, 3))
-        if (ponctuationMark = getRandomItemFromArray(commonPunctuation) === '.') {
-            dummyParagraph += '.\n '
-            wrapLine = true
-        } else {
-            dummyParagraph += `${ponctuationMark} `
-            wrapLine = false
-        }
-    }
-    return dummyParagraph
-}
 
 const generateDummySubject = () =>
     getRandomItemFromArray(commonSubjects)
@@ -479,4 +450,54 @@ const generateDummyObject = () =>
     getRandomItemFromArray(commonEnglishObjects)
 const generateDummyProductName = () => getRandomItemFromArray(productNames)
 
-module.exports = { generateDummyParagraph, generateDummyString , generateDummyObject , generateDummyName , generateDummySubject , generateDummyProductName}
+
+class Dummy {
+    static string(stringLength = 1) {
+        let dummyString = ''
+        for (let index = 0; index < stringLength; index++) {
+            dummyString += getRandomNumber(0, 10) > 2 ? getRandomItemFromArray(commonSubjects).toLowerCase() + ' ' : getRandomItemFromArray(names) + ' '
+            dummyString += getRandomNumber(0, 10) > 4 ? getRandomItemFromArray(commonEnglishVerbs) + ' ' : getRandomItemFromArray(commonEnglishWords) + ' '
+            dummyString += getRandomItemFromArray(commonEnglishObjects) + ' '
+            dummyString += getRandomItemFromArray(commonEnglishWords) + ' '
+            dummyString += getRandomNumber(0, 10) > 8 ? getRandomItemFromArray(commonEnglishWords) : getRandomItemFromArray(commonEnglishObjects)
+            dummyString += ''
+        }
+        return dummyString
+    }
+    static stringWithPonctuation(stringLength = 1) {
+        let dummyString = ''
+        let ponctuationMark = ''
+        for (let index = 0; index < stringLength; index++) {
+            dummyString += getRandomNumber(0, 10) > 2 ? getRandomItemFromArray(commonSubjects).toLowerCase() + ' ' : getRandomItemFromArray(names) + ' '
+            dummyString += getRandomNumber(0, 10) > 4 ? getRandomItemFromArray(commonEnglishVerbs) + ' ' : getRandomItemFromArray(commonEnglishWords) + ' '
+            dummyString += getRandomItemFromArray(commonEnglishObjects) + ' '
+            dummyString += getRandomItemFromArray(commonEnglishWords) + ' '
+            dummyString += getRandomNumber(0, 10) > 8 ? getRandomItemFromArray(commonEnglishWords) : getRandomItemFromArray(commonEnglishObjects)
+            if (index != stringLength - 1) {
+                dummyString += `${getRandomItemFromArray(commonPunctuation)} `
+            }
+
+        }
+        return dummyString
+    }
+    /// generate a random paragraph that contain paragraph length sentences
+    /// @paragraphlength
+    static paragraph(paragraphLength = 1) {
+        let dummyParagraph = ''
+        for (let index = 0; index < paragraphLength; index++) {
+            dummyParagraph += capitalizeFirstLetter(this.stringWithPonctuation(getRandomNumber(10, 20)))
+            dummyParagraph += `.\n`
+        }
+        return dummyParagraph
+    }
+    static subject = () =>
+        getRandomItemFromArray(commonSubjects)
+    static name = () =>
+        getRandomItemFromArray(names)
+    static object = () =>
+        getRandomItemFromArray(commonEnglishObjects)
+    static productName = () => getRandomItemFromArray(productNames)
+
+}
+
+module.exports = Dummy
