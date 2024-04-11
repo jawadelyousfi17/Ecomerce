@@ -1,11 +1,13 @@
-// Require the fs module (if using Node.js)
-// const fs = require('fs');
-// Read the JSON file
+const path = require('path');
+const fs = require('fs');
+
+
+
 const englishData = require('./data/english.json')
 const geolocationData = require('./data/geolocation.json')
 const globalData = require('./data/global.json')
 const shoppingData = require('./data/shopingData.json')
-
+const imagesData = require('./data/images-path/general.json')
 
 function getRandomItemFromArray(array) {
     const randomIndex = Math.floor(Math.random() * array.length);
@@ -79,16 +81,16 @@ class Dummy {
         }
         return dummyParagraph
     }
-    static word =() => {
-        const randomNumber = getRandomNumber(0,7)
-        if(randomNumber === 0 ) return getRandomItemFromArray(globalData.names)
-        if(randomNumber === 1 ) return getRandomItemFromArray(englishData.commonAdjectives)
-        if(randomNumber === 2 ) return getRandomItemFromArray(englishData.commonEnglishObjects)
-        if(randomNumber === 3 ) return getRandomItemFromArray(englishData.commonSubjects)
-        if(randomNumber === 4 ) return getRandomItemFromArray(englishData.commonEnglishWords)
-        if(randomNumber === 5 ) return getRandomItemFromArray(geolocationData.countries)
-        if(randomNumber === 6 ) return getRandomItemFromArray(geolocationData.cities)
-        if(randomNumber === 7 ) return getRandomItemFromArray(shoppingData.productNames)
+    static word = () => {
+        const randomNumber = getRandomNumber(0, 7)
+        if (randomNumber === 0) return getRandomItemFromArray(globalData.names)
+        if (randomNumber === 1) return getRandomItemFromArray(englishData.commonAdjectives)
+        if (randomNumber === 2) return getRandomItemFromArray(englishData.commonEnglishObjects)
+        if (randomNumber === 3) return getRandomItemFromArray(englishData.commonSubjects)
+        if (randomNumber === 4) return getRandomItemFromArray(englishData.commonEnglishWords)
+        if (randomNumber === 5) return getRandomItemFromArray(geolocationData.countries)
+        if (randomNumber === 6) return getRandomItemFromArray(geolocationData.cities)
+        if (randomNumber === 7) return getRandomItemFromArray(shoppingData.productNames)
     }
     static subject = () =>
         getRandomItemFromArray(englishData.commonSubjects)
@@ -99,6 +101,10 @@ class Dummy {
     static productName = () => getRandomItemFromArray(shoppingData.productNames)
     static country = () => getRandomItemFromArray(geolocationData.countries)
     static city = () => getRandomItemFromArray(geolocationData.cities)
+    static image = () => `dummy/images/general/${getRandomItemFromArray(imagesData.images)}`
 }
+
+
+
 
 module.exports = Dummy
