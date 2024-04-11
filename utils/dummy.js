@@ -1,3 +1,3 @@
 const Dummy = require('../dummy/dummy')
 
-console.log(Dummy.city())
+console.log(Dummy.word())
