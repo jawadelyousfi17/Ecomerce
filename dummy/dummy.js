@@ -190,7 +190,7 @@ const commonAdjectives = [
     "indifferent", "reliable", "unreliable", "sociable", "unsociable", "sincere", "insincere", "sober", "excitable", "thorough",
     "superficial", "tactful", "blunt", "gracious", "rude"]
 const commonPunctuation = [
-    ",", " ?", "!", ",", ",", ",", " ;", , '', '', '', '']
+    ",", " ?", "!", ",", ",", ",", " ;", , '', '', '', '', '', '', '', '', '']
 const names = [
     "Liam", "Olivia", "Noah", "Emma", "Oliver", "Ava", "William", "Sophia", "Elijah", "Isabella",
     "James", "Mia", "Benjamin", "Charlotte", "Lucas", "Amelia", "Henry", "Harper", "Alexander", "Evelyn",
@@ -428,6 +428,64 @@ const productNames = [
     "Yoga Sandals Cover Cover",
     "Yoga Mat Cleaner Cover Cover"]
 
+const countries = [
+    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
+    "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia",
+    "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
+    "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica",
+    "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt",
+    "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon",
+    "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti",
+    "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan",
+    "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho",
+    "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali",
+    "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro",
+    "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria",
+    "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay",
+    "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
+    "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia",
+    "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea",
+    "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania",
+    "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda",
+    "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City",
+    "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+]
+const cities = [
+    "Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico City", "Beijing", "Osaka", "Cairo", "New York City",
+    "Dhaka", "Karachi", "Buenos Aires", "Istanbul", "Kolkata", "Manila", "Lagos", "Rio de Janeiro", "Moscow", "Shenzhen",
+    "Jakarta", "Lahore", "Bangalore", "Seoul", "Cairo", "Kinshasa", "Tianjin", "Guangzhou", "Los Angeles", "Bogota",
+    "Lima", "Tehran", "London", "Chennai", "Hyderabad", "Bangkok", "Ahmedabad", "Ho Chi Minh City", "New Taipei City",
+    "Baghdad", "Hangzhou", "Santiago", "Riyadh", "Singapore", "Nagoya", "Wuhan", "Shenyang", "Chongqing", "Izmir",
+    "Surat", "Johannesburg", "Ankara", "Kanpur", "Nanjing", "Busan", "Chengdu", "Lahore", "Mexico City", "Lima",
+    "Rio de Janeiro", "Cairo", "Karachi", "Dhaka", "Tehran", "Bogota", "Bangkok", "Ho Chi Minh City", "Singapore",
+    "Johannesburg", "Delhi", "Wuhan", "Los Angeles", "Chennai", "Buenos Aires", "Istanbul", "Tokyo", "Jakarta",
+    "Bangalore", "New York City", "London", "Hangzhou", "Shanghai", "Hyderabad", "Kolkata", "Manila", "Moscow",
+    "Sao Paulo", "Tianjin", "Seoul", "Lagos", "Beijing", "Mexico City", "Lima", "Bogota", "Rio de Janeiro",
+    "Cairo", "Tehran", "Bangkok", "Karachi", "Delhi", "Jakarta", "Dhaka", "New York City", "Los Angeles",
+    "Manila", "Sao Paulo", "Mexico City", "Mumbai", "Shanghai", "Tokyo", "Karachi", "Delhi", "Shanghai",
+    "Sao Paulo", "Mumbai", "Mexico City", "Beijing", "Osaka", "Cairo", "New York City", "Dhaka", "Karachi",
+    "Buenos Aires", "Istanbul", "Kolkata", "Manila", "Lagos", "Rio de Janeiro", "Moscow", "Shenzhen",
+    "Jakarta", "Lahore", "Bangalore", "Seoul", "Cairo", "Kinshasa", "Tianjin", "Guangzhou", "Los Angeles",
+    "Bogota", "Lima", "Tehran", "London", "Chennai", "Hyderabad", "Bangkok", "Ahmedabad", "Ho Chi Minh City",
+    "New Taipei City", "Baghdad", "Hangzhou", "Santiago", "Riyadh", "Singapore", "Nagoya", "Wuhan", "Shenyang",
+    "Chongqing", "Izmir", "Surat", "Johannesburg", "Ankara", "Kanpur", "Nanjing", "Busan", "Chengdu", "Lahore",
+    "Mexico City", "Lima", "Rio de Janeiro", "Cairo", "Karachi", "Dhaka", "Tehran", "Bogota", "Bangkok",
+    "Ho Chi Minh City", "Singapore", "Johannesburg", "Delhi", "Wuhan", "Los Angeles", "Chennai", "Buenos Aires",
+    "Istanbul", "Tokyo", "Jakarta", "Bangalore", "New York City", "London", "Hangzhou", "Shanghai", "Hyderabad",
+    "Kolkata", "Manila", "Moscow", "Sao Paulo", "Tianjin", "Seoul", "Lagos", "Beijing", "Mexico City", "Lima",
+    "Bogota", "Rio de Janeiro", "Cairo", "Tehran", "Bangkok", "Karachi", "Delhi", "Jakarta", "Dhaka", "New York City",
+    "Los Angeles", "Manila", "Sao Paulo", "Mexico City", "Mumbai", "Shanghai", "Tokyo", "Karachi", "Delhi", "Shanghai",
+    "Sao Paulo", "Mumbai", "Mexico City", "Beijing", "Osaka", "Cairo", "New York City", "Dhaka", "Karachi", "Buenos Aires",
+    "Istanbul", "Kolkata", "Manila", "Lagos", "Rio de Janeiro", "Moscow", "Shenzhen", "Jakarta", "Lahore", "Bangalore",
+    "Seoul", "Cairo", "Kinshasa", "Tianjin", "Guangzhou", "Los Angeles", "Bogota", "Lima", "Tehran", "London", "Chennai",
+    "Hyderabad", "Bangkok", "Ahmedabad", "Ho Chi Minh City", "New Taipei City", "Baghdad", "Hangzhou", "Santiago", "Riyadh",
+    "Singapore", "Nagoya", "Wuhan", "Shenyang", "Chongqing", "Izmir", "Surat", "Johannesburg", "Ankara", "Kanpur", "Nanjing",
+    "Busan", "Chengdu", "Lahore", "Mexico City", "Lima", "Rio de Janeiro", "Cairo", "Karachi", "Dhaka", "Tehran", "Bogota",
+    "Bangkok", "Ho Chi Minh City", "Singapore", "Johannesburg", "Delhi", "Wuhan", "Los Angeles", "Chennai", "Buenos Aires",
+    "Istanbul", "Tokyo", "Jakarta", "Bangalore", "New York City", "London", "Hangzhou", "Shanghai", "Hyderabad", "Kolkata",
+    "Manila", "Moscow", "Sao Paulo", "Tianjin", "Seoul", "Lagos", "Beijing", "Mexico City", "Lima", "Bogota", "Rio de Janeiro",
+    "Cairo", "Tehran", "Bangkok", "Karachi", "Delhi", "Jakarta", "Dhaka", "New York City", "Los Angeles", "Manila", "Sao Paulo",
+    "Mexico City", "Mumbai"]
 
 
 function getRandomItemFromArray(array) {
@@ -450,8 +508,17 @@ const generateDummyObject = () =>
     getRandomItemFromArray(commonEnglishObjects)
 const generateDummyProductName = () => getRandomItemFromArray(productNames)
 
-
+/**
+ * Represents a Dummy class.
+ * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus nisl quis ligula malesuada, eget ullamcorper urna bibendum.
+ * Integer lobortis orci non sapien fringilla malesuada. Duis in ex ut odio mattis volutpat a sed leo. Nunc egestas est nisi.
+ */
 class Dummy {
+    /**
+     * Generate random sentences without ponctuation
+     * @param {number} stringLength 
+     * @returns {string}
+     */
     static string(stringLength = 1) {
         let dummyString = ''
         for (let index = 0; index < stringLength; index++) {
@@ -464,6 +531,11 @@ class Dummy {
         }
         return dummyString
     }
+    /**
+     * Generate random sentences with ponctuation
+     * @param {number} stringLength 
+     * @returns {string}
+     */
     static stringWithPonctuation(stringLength = 1) {
         let dummyString = ''
         let ponctuationMark = ''
@@ -480,8 +552,12 @@ class Dummy {
         }
         return dummyString
     }
-    /// generate a random paragraph that contain paragraph length sentences
-    /// @paragraphlength
+
+    /**
+     * Generate random paragraphs
+     * @param {number} paragraphLength - The number of paragraph , 1 paragraph by default
+     * @returns {string}
+     */
     static paragraph(paragraphLength = 1) {
         let dummyParagraph = ''
         for (let index = 0; index < paragraphLength; index++) {
@@ -497,7 +573,8 @@ class Dummy {
     static object = () =>
         getRandomItemFromArray(commonEnglishObjects)
     static productName = () => getRandomItemFromArray(productNames)
-
+    static country = () => getRandomItemFromArray(countries)
+    static city = () => getRandomItemFromArray(cities)
 }
 
 module.exports = Dummy
