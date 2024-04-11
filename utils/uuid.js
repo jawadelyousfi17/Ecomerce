@@ -21,8 +21,5 @@ function uid(idLength = 8) {
     }
     return uid
 }
-  try {
-    console.log(uid(0))
-  } catch (error) {
-    console.log(error)
-  }
+  
+  module.exports = uid

@@ -8,6 +8,7 @@ const geolocationData = require('./data/geolocation.json')
 const globalData = require('./data/global.json')
 const shoppingData = require('./data/shopingData.json')
 const imagesData = require('./data/images-path/general.json')
+const productsImagesData = require('./data/images-path/products.json')
 
 function getRandomItemFromArray(array) {
     const randomIndex = Math.floor(Math.random() * array.length);
@@ -102,6 +103,8 @@ class Dummy {
     static country = () => getRandomItemFromArray(geolocationData.countries)
     static city = () => getRandomItemFromArray(geolocationData.cities)
     static image = () => `dummy/images/general/${getRandomItemFromArray(imagesData.images)}`
+    static productsImage = () => `dummy/images/products/${getRandomItemFromArray(productsImagesData.images)}`
+    static number = (min=0,max=10) => getRandomNumber(min,max)
 }
 
 
