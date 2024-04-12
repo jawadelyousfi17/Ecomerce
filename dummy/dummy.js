@@ -1,6 +1,3 @@
-const path = require('path');
-const fs = require('fs');
-
 
 
 const englishData = require('./data/english.json')
@@ -230,8 +227,8 @@ class Dummy {
     /**
      * Generates a random date within the specified range.
      * @param {object} options - Options for generating the random date.
-     * @param {string} [options.startDate='1900-01-01'] - The start date of the range in "YYYY-MM-DD" format. Defaults to '1900-01-01' if not provided.
-     * @param {string} [options.endDate='2050-12-31'] - The end date of the range in "YYYY-MM-DD" format. Defaults to '2050-12-31' if not provided.
+     * @param {string} options.startDate - The start date of the range in "YYYY-MM-DD" format. Defaults to '1900-01-01' if not provided.
+     * @param {string} options.endDate - The end date of the range in "YYYY-MM-DD" format. Defaults to '2050-12-31' if not provided.
      * @returns {Date} A random date within the specified range.
      * @example
      * // Returns a random date between January 1, 1900 and December 31, 2050

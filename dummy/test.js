@@ -1,7 +1,5 @@
 const Dummy = require('./dummy')
 
-const startDate = '2000-01-01';
-const endDate = '2022-12-31';
 
 // test 
 function testAll() {
@@ -31,5 +29,12 @@ function emails(numberOfemails) {
     }
     console.log(emails)
 }
+function testFunction(DummyFunction , repeatetion) {
+    const result = []
+    for (let index = 0; index < repeatetion; index++) {
+        result.push(DummyFunction())
+    }
+    console.log(result)
+}
 
-emails(10)
+testFunction(Dummy.date,100)
