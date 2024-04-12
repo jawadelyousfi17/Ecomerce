@@ -12,14 +12,14 @@ const addProduct = async (req, res) => {
     try {
         const isValidProduct = productCheck(name, description, sku)
         await product.save()
-        res.status(200).json({ "success": true })
+        res.status(200).json({ "success": "yes" })
     } catch (error) {
         if (error.code) {
             if (error.code === 11000) {
-                res.status(400).json({ "type": "db", "errors": `sku ${sku} must be unique ` })
+                res.json({ "success": "no", "errors": `sku ${sku} must be unique ` })
             }
         }
-        if (error.type == "validator") res.status(400).json({ "error": error })
+        if (error.type == "validator") res.json({ "sucess": "no" , "errors" : error })
     }
 }
 
